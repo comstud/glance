@@ -175,6 +175,7 @@ class ApiServer(Server):
         self.rbd_store_chunk_size = 4
         self.delayed_delete = delayed_delete
         self.owner_is_tenant = True
+        self.workers = 0
         self.cache_pipeline = ""  # Set to cache for cache middleware
         self.image_cache_dir = os.path.join(self.test_dir,
                                             'cache')
@@ -208,6 +209,7 @@ rbd_store_pool = %(rbd_store_pool)s
 rbd_store_ceph_conf = %(rbd_store_ceph_conf)s
 delayed_delete = %(delayed_delete)s
 owner_is_tenant = %(owner_is_tenant)s
+workers = %(workers)s
 scrub_time = 5
 scrubber_datadir = %(scrubber_datadir)s
 image_cache_dir = %(image_cache_dir)s
